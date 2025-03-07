@@ -43,6 +43,7 @@ let scrollTimeout = null;
 
 // Mapeamento das seções por intervalos de páginas
 const sections = [
+    { title: 'SUMÁRIO', startPage: 1, endPage: 4 },
     { title: 'ORAÇÃO INICIAL', startPage: 5, endPage: 5 },
     { title: 'PRIMEIRA ESTAÇÃO', startPage: 6, endPage: 9 },
     { title: 'SEGUNDA ESTAÇÃO', startPage: 10, endPage: 13 },
@@ -315,7 +316,8 @@ function updateCurrentSection(pageNumber) {
     const sectionLink = document.querySelector(`a[data-page="${section.startPage}"]`);
     
     if (sectionLink) {
-        // Usa o conteúdo HTML do link para o texto da seção atual
+        // Usa o conteúdo HTML do link para o texto da seção atual no botão do cabeçalho
+        // Mas mantém o formato completo para o mini-indicador
         currentSectionText.innerHTML = sectionLink.innerHTML;
         
         // Usa o atributo data-title para o mini-indicador (mantém o formato original para acessibilidade)
