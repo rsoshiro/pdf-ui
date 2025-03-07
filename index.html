@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Via Sacra - Paróquia Mãe da Divina Providência</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.7.107/pdf.worker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="icon" href="img/logo.png" type="image/png">
+</head>
+<body>
+    <div class="container">
+        <header id="main-header">
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo Paróquia MDP">
+                <h1>Via Sacra</h1>
+            </div>
+            <div class="header-controls">
+                <button id="current-section-btn" aria-label="Seção atual">
+                    <span id="current-section-text">Carregando...</span>
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <button id="menu-toggle" aria-label="Abrir menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </header>
+
+        <div id="section-dropdown" class="dropdown hidden">
+            <ul>
+                <li><a href="#page=5" data-page="5" data-title="ORAÇÃO INICIAL"><i class="fas fa-praying-hands"></i> Oração Inicial</a></li>
+                <li><a href="#page=6" data-page="6" data-title="PRIMEIRA ESTAÇÃO"><span class="station-number">1ª</span> Estação</a></li>
+                <li><a href="#page=10" data-page="10" data-title="SEGUNDA ESTAÇÃO"><span class="station-number">2ª</span> Estação</a></li>
+                <li><a href="#page=14" data-page="14" data-title="TERCEIRA ESTAÇÃO"><span class="station-number">3ª</span> Estação</a></li>
+                <li><a href="#page=18" data-page="18" data-title="QUARTA ESTAÇÃO"><span class="station-number">4ª</span> Estação</a></li>
+                <li><a href="#page=22" data-page="22" data-title="QUINTA ESTAÇÃO"><span class="station-number">5ª</span> Estação</a></li>
+                <li><a href="#page=26" data-page="26" data-title="SEXTA ESTAÇÃO"><span class="station-number">6ª</span> Estação</a></li>
+                <li><a href="#page=30" data-page="30" data-title="SÉTIMA ESTAÇÃO"><span class="station-number">7ª</span> Estação</a></li>
+                <li><a href="#page=34" data-page="34" data-title="OITAVA ESTAÇÃO"><span class="station-number">8ª</span> Estação</a></li>
+                <li><a href="#page=38" data-page="38" data-title="NONA ESTAÇÃO"><span class="station-number">9ª</span> Estação</a></li>
+                <li><a href="#page=42" data-page="42" data-title="DÉCIMA ESTAÇÃO"><span class="station-number">10ª</span> Estação</a></li>
+                <li><a href="#page=46" data-page="46" data-title="DÉCIMA PRIMEIRA ESTAÇÃO"><span class="station-number">11ª</span> Estação</a></li>
+                <li><a href="#page=50" data-page="50" data-title="DÉCIMA SEGUNDA ESTAÇÃO"><span class="station-number">12ª</span> Estação</a></li>
+                <li><a href="#page=54" data-page="54" data-title="DÉCIMA TERCEIRA ESTAÇÃO"><span class="station-number">13ª</span> Estação</a></li>
+                <li><a href="#page=58" data-page="58" data-title="DÉCIMA QUARTA ESTAÇÃO"><span class="station-number">14ª</span> Estação</a></li>
+                <li><a href="#page=62" data-page="62" data-title="ORAÇÃO FINAL"><i class="fas fa-praying-hands"></i> Oração Final</a></li>
+            </ul>
+        </div>
+
+        <nav id="navigation" class="hidden">
+            <div class="nav-header">
+                <h2>Índice Completo</h2>
+                <button id="close-nav" aria-label="Fechar menu">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <ul id="nav-sections-list">
+                <li><a href="#page=5" data-page="5" data-title="ORAÇÃO INICIAL"><i class="fas fa-praying-hands"></i> Oração Inicial</a></li>
+                <li><a href="#page=6" data-page="6" data-title="PRIMEIRA ESTAÇÃO"><span class="station-number">1ª</span> Estação</a></li>
+                <li><a href="#page=10" data-page="10" data-title="SEGUNDA ESTAÇÃO"><span class="station-number">2ª</span> Estação</a></li>
+                <li><a href="#page=14" data-page="14" data-title="TERCEIRA ESTAÇÃO"><span class="station-number">3ª</span> Estação</a></li>
+                <li><a href="#page=18" data-page="18" data-title="QUARTA ESTAÇÃO"><span class="station-number">4ª</span> Estação</a></li>
+                <li><a href="#page=22" data-page="22" data-title="QUINTA ESTAÇÃO"><span class="station-number">5ª</span> Estação</a></li>
+                <li><a href="#page=26" data-page="26" data-title="SEXTA ESTAÇÃO"><span class="station-number">6ª</span> Estação</a></li>
+                <li><a href="#page=30" data-page="30" data-title="SÉTIMA ESTAÇÃO"><span class="station-number">7ª</span> Estação</a></li>
+                <li><a href="#page=34" data-page="34" data-title="OITAVA ESTAÇÃO"><span class="station-number">8ª</span> Estação</a></li>
+                <li><a href="#page=38" data-page="38" data-title="NONA ESTAÇÃO"><span class="station-number">9ª</span> Estação</a></li>
+                <li><a href="#page=42" data-page="42" data-title="DÉCIMA ESTAÇÃO"><span class="station-number">10ª</span> Estação</a></li>
+                <li><a href="#page=46" data-page="46" data-title="DÉCIMA PRIMEIRA ESTAÇÃO"><span class="station-number">11ª</span> Estação</a></li>
+                <li><a href="#page=50" data-page="50" data-title="DÉCIMA SEGUNDA ESTAÇÃO"><span class="station-number">12ª</span> Estação</a></li>
+                <li><a href="#page=54" data-page="54" data-title="DÉCIMA TERCEIRA ESTAÇÃO"><span class="station-number">13ª</span> Estação</a></li>
+                <li><a href="#page=58" data-page="58" data-title="DÉCIMA QUARTA ESTAÇÃO"><span class="station-number">14ª</span> Estação</a></li>
+                <li><a href="#page=62" data-page="62" data-title="ORAÇÃO FINAL"><i class="fas fa-praying-hands"></i> Oração Final</a></li>
+            </ul>
+        </nav>
+
+        <main id="main-content">
+            <div id="pdf-controls">
+                <div class="zoom-controls">
+                    <button id="zoom-out" aria-label="Diminuir zoom">
+                        <i class="fas fa-search-minus"></i>
+                    </button>
+                    <span id="zoom-level">100%</span>
+                    <button id="zoom-in" aria-label="Aumentar zoom">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div id="pdf-container">
+                <canvas id="pdf-render"></canvas>
+                <div id="loading">Carregando...
+                    <!-- O spinner de carregamento será adicionado via CSS -->
+                </div>
+            </div>
+            
+            <div class="page-control-buttons">
+                <button id="prev-page" aria-label="Página anterior">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <span id="page-info">Página <span id="current-page">0</span> de <span id="total-pages">0</span></span>
+                <button id="next-page" aria-label="Próxima página">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+            
+            <div id="floating-nav-btn">
+                <button id="quick-nav-toggle" aria-label="Navegação rápida">
+                    <i class="fas fa-book-open"></i>
+                    <div class="section-indicator" id="mini-section-indicator"></div>
+                    <div class="progress-indicator" id="progress-bar"></div>
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <img src="img/logo.png" alt="Logo Paróquia MDP">
+                <p>Via Sacra - Paróquia Mãe da Divina Providência &copy; 2025</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html> 
