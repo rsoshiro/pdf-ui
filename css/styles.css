@@ -606,6 +606,12 @@ footer {
     margin: 0 auto;
 }
 
+.footer-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
 footer img {
     height: 42px;
     width: auto;
@@ -624,6 +630,24 @@ footer img:hover {
 footer p {
     font-size: 0.9rem;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.credits {
+    font-size: 0.8rem;
+    opacity: 0.9;
+}
+
+.credits a {
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.7);
+    transition: all 0.3s ease;
+}
+
+.credits a:hover {
+    color: #fff;
+    border-bottom: 1px solid white;
 }
 
 /* Responsividade */
@@ -751,8 +775,16 @@ footer p {
         gap: 0.5rem;
     }
     
+    .footer-text {
+        gap: 0.2rem;
+    }
+    
     footer p {
         font-size: 0.8rem;
+    }
+    
+    .credits {
+        font-size: 0.7rem;
     }
 
     .dropdown {
