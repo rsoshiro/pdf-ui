@@ -59,7 +59,8 @@ const sections = [
     { title: 'DÉCIMA SEGUNDA ESTAÇÃO', startPage: 50, endPage: 53 },
     { title: 'DÉCIMA TERCEIRA ESTAÇÃO', startPage: 54, endPage: 57 },
     { title: 'DÉCIMA QUARTA ESTAÇÃO', startPage: 58, endPage: 61 },
-    { title: 'ORAÇÃO FINAL', startPage: 62, endPage: 68 },
+    { title: 'DÉCIMA QUINTA ESTAÇÃO', startPage: 62, endPage: 65 },
+    { title: 'ORAÇÃO FINAL', startPage: 66, endPage: 68 },
 ];
 
 // Adiciona overlay para quando o menu está aberto

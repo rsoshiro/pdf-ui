@@ -87,4 +87,11 @@ Para personalizar a aparência da interface, edite as variáveis CSS no início 
     --title-text-color: #4a4a4a;
     --light-gray: #e9ecef;
 }
-``` 
+```
+
+## Atualizações recentes
+
+### Março 2025
+- Adicionada a 15ª Estação ao índice de navegação
+- Corrigida a paginação da Oração Final para a página 66
+- Adicionados créditos da AD3 Comunicação no rodapé 
